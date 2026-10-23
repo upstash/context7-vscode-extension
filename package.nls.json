@@ -1,0 +1,7 @@
+{
+	"extension.displayName": "Context7 MCP Server",
+	"extension.description": "Real-time code and documentation access for AI assistants via Context7 MCP server",
+	"command.useTokenMode": "Context7: Switch to API token mode",
+	"command.useOAuthMode": "Context7: Switch to OAuth sign-in mode",
+	"command.checkApiKey": "Context7: Check the configured API key",	"mcp.label": "Context7"
+}

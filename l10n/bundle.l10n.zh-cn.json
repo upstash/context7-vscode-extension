@@ -1,0 +1,7 @@
+{
+	"Context7: the configured API key was rejected by Context7. Continuing with anonymous access.": "Context7：已配置的 API 密钥被 Context7 拒绝，将继续以匿名方式访问。",
+	"Context7: no API key is configured. Set `context7.apiKey` to use account access.": "Context7：未配置 API 密钥。请设置 `context7.apiKey` 以使用账号访问。",
+	"Context7: the API key is valid.": "Context7：API 密钥有效。",
+	"Context7: the API key was rejected by Context7.": "Context7：API 密钥被 Context7 拒绝。",
+	"Context7: the API key could not be verified because Context7 did not answer.": "Context7：Context7 未响应，无法验证 API 密钥。"
+}

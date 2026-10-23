@@ -1,0 +1,7 @@
+{
+  "Context7: the configured API key was rejected by Context7. Continuing with anonymous access.": "Context7: the configured API key was rejected by Context7. Continuing with anonymous access.",
+  "Context7: no API key is configured. Set `context7.apiKey` to use account access.": "Context7: no API key is configured. Set `context7.apiKey` to use account access.",
+  "Context7: the API key is valid.": "Context7: the API key is valid.",
+  "Context7: the API key was rejected by Context7.": "Context7: the API key was rejected by Context7.",
+  "Context7: the API key could not be verified because Context7 did not answer.": "Context7: the API key could not be verified because Context7 did not answer."
+}

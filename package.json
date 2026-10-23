@@ -1,8 +1,8 @@
 {
 	"name": "context7-mcp",
-	"displayName": "Context7 MCP Server",
-	"description": "Real-time code and documentation access for AI assistants via Context7 MCP server",
-	"version": "1.1.0",
+	"displayName": "%extension.displayName%",
+	"description": "%extension.description%",
+	"version": "1.2.0",
 	"publisher": "Upstash",
 	"private": true,
 	"icon": "context7logo.png",
@@ -27,32 +27,65 @@
 	],
 	"activationEvents": [],
 	"main": "./out/extension.js",
+	"l10n": "./l10n",
 	"contributes": {
-		"mcpServerDefinitionProviders": [
+		"commands": [
 			{
-				"id": "upstash/context7",
-				"label": "Context7"
+				"command": "context7.useTokenMode",
+				"title": "%command.useTokenMode%"
+			},
+			{
+				"command": "context7.useOAuthMode",
+				"title": "%command.useOAuthMode%"
+			},
+			{
+				"command": "context7.checkApiKey",
+				"title": "%command.checkApiKey%"
 			}
 		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "context7.useTokenMode",
+					"when": "context7.authMode == oauth"
+				},
+				{
+					"command": "context7.useOAuthMode",
+					"when": "context7.authMode != oauth"
+				},
+				{
+					"command": "context7.checkApiKey",
+					"when": "context7.authMode != oauth"
+				}
+			]
+		},
 		"configuration": {
 			"title": "Context7",
 			"properties": {
 				"context7.apiKey": {
 					"type": "string",
 					"default": "",
-					"markdownDescription": "Optional Context7 API key for higher rate limits and access to private repositories. Get one at [context7.com/dashboard](https://context7.com/dashboard). Changing the key stops the server — restart it via the `MCP: List Servers` command (no window reload needed)."
+					"markdownDescription": "Optional Context7 API key (`ctx7sk-...`) from [context7.com/dashboard](https://context7.com/dashboard). The key is validated before it is used: a valid key grants account access and the higher rate limit, while a missing or invalid key keeps anonymous access. Changing the key stops the running server; restart it via the `MCP: List Servers` command (no window reload required)."
 				}
 			}
-		}
+		},
+		"mcpServerDefinitionProviders": [
+			{
+				"id": "upstash/context7",
+				"label": "%mcp.label%"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./"
+		"watch": "tsc -watch -p ./",
+		"l10n": "vscode-l10n-dev export --outDir l10n ./src"
 	},
 	"devDependencies": {
 		"@types/node": "^22",
 		"@types/vscode": "^1.101.0",
+		"@vscode/l10n-dev": "^0.0.35",
 		"typescript": "^5.8.2"
 	}
 }

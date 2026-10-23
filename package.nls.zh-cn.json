@@ -1,0 +1,8 @@
+{
+	"extension.displayName": "Context7 MCP 服务",
+	"extension.description": "通过 Context7 MCP 服务为 AI 助手提供实时的代码和文档访问能力",
+	"command.useTokenMode": "Context7：切换为令牌模式",
+	"command.useOAuthMode": "Context7：切换为 OAuth 登录模式",
+	"command.checkApiKey": "Context7：检查已配置的 API 密钥",
+	"mcp.label": "Context7"
+}

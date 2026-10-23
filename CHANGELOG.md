@@ -1,5 +1,20 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- API token mode (default): the `context7.apiKey` setting is validated against the Context7 API before it is attached to the MCP server definition, and the key is sent as `Authorization: Bearer <key>`. A valid key grants account access and the higher rate limit.
+- `Context7: Check the configured API key` command to validate the configured key on demand.
+- OAuth sign-in mode: `Context7: Switch to OAuth sign-in mode` uses `https://mcp.context7.com/mcp/oauth`, where VS Code's native MCP client runs the browser login flow and manages the token.
+- Runtime message translations in `l10n/`, with English and Simplified Chinese bundles. The English bundle is generated from the source with `npm run l10n`.
+
+### Changed
+
+- A missing or unusable API key now falls back to anonymous access instead of being sent to the server. Context7 answers a request carrying an invalid key with an error rather than degrading to the anonymous rate limit, so the key is dropped instead.
+- The server definition carries a version derived from the authentication mode and a fingerprint of the API key, so VS Code stops the running server and refreshes the tool list when the credentials change.
+- The API key is checked once per server start instead of on every request. The verdict is cached for a few minutes.
+
 ## [1.1.0] - 2026-06-11
 
 ### Changed
